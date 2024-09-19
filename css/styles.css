@@ -25,12 +25,28 @@ footer {
    margin-top: 10px;
 }
 
-ul {
+footer ul {
+    list-style: none;
+}
+
+hr {
+    width: 100%;
+    margin: 50px 0 0;
+    border-width: 1px;
+    border-color: rgb(209, 209, 255);
+}
+
+.main-nav {
     list-style: none;
     padding: 0;
     margin-top: 0;
     text-align: center;
-	display: block;
+    width: 100%;
+    display: inline-block;
+}
+
+ul {
+    padding: 0;
 }
 
 a {
@@ -54,12 +70,18 @@ h3 {
     margin: 16px auto;
 }
 
+h5 {
+    font-size: 10px;
+}
+
 /* LOCAL*/
 
 .main-header {
 	padding-top: 1em;
 	padding-bottom: 2em;
     max-width: 100%;
+    margin: auto;
+    text-align: center;
 }
 
 .main-header, .main-nav, .banner, .row {
@@ -68,10 +90,13 @@ h3 {
     justify-content: space-between;
 }
 
+.name {
+    display: flex;
+    flex-direction: row;
+}
 .name a,
 .main-nav a {
 	text-align: center;
-	display: block;
     padding: 10px 15px;
 }
 
@@ -80,16 +105,21 @@ h3 {
     align-self: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 .main-nav {
 	margin-top: 10px;
     width: 100%;
-    position: relative;
 }
 
 .main-footer {
     padding: 1rem 10px;
     text-align: center;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-nav li {
@@ -131,23 +161,166 @@ h3 {
     margin: 16px auto 18px;
 }
 
+.secondary-name {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+
+.secondary-nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;    
+}
+
+.secondary-nav li {
+    margin-left: 5px;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 0;
+    padding: 0;
+    width: 100%;
+}
+
 
 /* MEDIA QUERIES*/
 
 @media (min-width: 769px) {
 	.main-header,
-	.row {
+	.row, .banner {
 		width: 90%;
 		margin: 0 auto;
 	}
-	.tagline {
-		font-size: 1.4em;
-	}
+    .main-header {
+        padding-bottom: 0;
+    }
+	.bio {
+        order: 0;
+        margin: 10px 10px;
+    }
+    .main-header, .banner, .row, .main-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .main-header {
+        flex-wrap: wrap;
+    }
+    .main-nav li {
+        background-color: transparent;
+        width: 100%;
+        text-transform: uppercase;
+        color: black;
+        font-weight: 700;
+        text-align: center;
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+    .card {
+        flex-basis: 49%;
+        margin-bottom: 30px;
+    }
+    .main-nav a {
+        text-align: center;
+        padding: 10px 0;
+    }
+   .main-nav {
+        margin: 10px 0 30px;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+        
+    }
+    .name {
+        display: flex;
+        flex-direction: row;
+        margin: auto;    
+        padding: 10px 15px;
+    }
+    .secondary-nav li {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    h5 {
+        font-size: 12px;
+    }
 }
+
+
 @media (min-width: 1025px) {
-	.main-header,
-	.row {
-		width: 80%;
-		max-width: 1150px;
-	}
+    .main-nav li:hover {
+        background-color: transparent;
+    }
+    .main-header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .name {
+        margin: 40px 0;
+        flex-basis: 50%;
+    }
+
+    nav {
+        margin: 40px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: flex;
+        margin: 0;
+        margin-left: auto;
+        flex-basis: 50%;
+    }
+
+    .banner {
+        margin-bottom: 60px;
+    }
+    
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    margin-left: auto;
+    flex-basis: 50%;
+}
+
+.main-nav li {
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+    .main-nav li, .main-nav a {
+        padding: 0;
+        text-align: right;
+        display: inline;
+        flex-grow: 1;
+    }
+    .main-header, .main-nav, .banner, .row, .main-footer {
+        max-width: 85%;
+    }
+
+    .profile {
+        width: 700px;
+        margin: auto;
+    }
+
+    .bio {
+        max-width: 50%;
+    }
+    .secondary-nav li {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    h5 {
+        font-size: 12px;
+    }
 }
